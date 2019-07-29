@@ -13,7 +13,12 @@ class Index extends Frontend
 
     public function index()
     {
-        return $this->redirect('admin.php/index/login');
+        if ($this->auth->id) {
+            return $this->redirect('/index/user/index.html');
+    }else{
+            return $this->redirect('/index/user/login.html');
+        }
+
        // return $this->view->fetch();
     }
 

@@ -9,7 +9,7 @@ return array (
     'content' => 
     array (
     ),
-    'value' => '/uploads/20180410/d87b34f821a4b95a0c138bc933bd8c2f.png',
+    'value' => '/assets/img/qrcode.png',
     'rule' => 'required',
     'msg' => '',
     'tip' => '连签周期',

@@ -16,6 +16,10 @@ return array (
     array (
       0 => 'leesign',
     ),
+    'response_send' => 
+    array (
+      0 => 'loginvideo',
+    ),
   ),
   'route' => 
   array (
