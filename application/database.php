@@ -20,7 +20,7 @@ return [
     // 数据库名
     'database'        => Env::get('database.database', 'adminsu'),
     // 用户名
-    'username'        => Env::get('database.username', 'root'),
+    'username'        => Env::get('database.username', 'adminsu'),
     // 密码
     'password'        => Env::get('database.password', '123qwert'),
     // 端口
