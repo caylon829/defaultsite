@@ -14,9 +14,9 @@ class Index extends Frontend
     public function index()
     {
         if ($this->auth->id) {
-            return $this->redirect('/index/user/index.html');
+            return $this->redirect('/index.php/index/user/index.html');
     }else{
-            return $this->redirect('/index/user/login.html');
+            return $this->redirect('/index.php/index/user/login.html');
         }
 
        // return $this->view->fetch();
