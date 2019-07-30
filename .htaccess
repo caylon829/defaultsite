@@ -1,0 +1,63 @@
+RewriteEngine On
+#非本站域名访问的全部转到本站域名来（301跳转），请改为你自己的域名
+#RewriteCond %{HTTP_HOST} !^www.b.com$ [NC]
+#RewriteCond %{HTTP_HOST} !^m.b.com$ [NC]
+#RewriteRule ^(.*)$ http://www.b.com/$1 [L,R=301]
+
+#伪静态下载页
+RewriteRule ^txt/(.*)\.html$ /plus/list.php?tid=$1&actype=download
+
+#伪静态文章
+RewriteRule ^(.*)/([0-9]+)\.html$ /plus/view.php?aid=$2&tdir=$1
+
+#伪静态小说封面
+RewriteCond $1 !^(dede-admin)
+RewriteRule ^(.*)/$ /plus/list.php?tid=$1
+
+#伪静态书库
+RewriteRule ^shuku\.html$ /shuku.php
+RewriteRule ^shuku_([0-9]+)_([0-9]+)\.html$ /shuku.php?totalresult=$1&pageno=$2
+RewriteRule ^over\.html$ /shuku.php?overtag=over
+RewriteRule ^over_([0-9]+)_([0-9]+)\.html$ /shuku.php?overtag=over&totalresult=$1&pageno=$2
+RewriteRule ^(\w+)/shuku\.html$ /shuku.php?aid=$1
+RewriteRule ^(\w+)/shuku_([0-9]+)_([0-9]+)\.html$ /shuku.php?aid=$1&totalresult=$2&pageno=$3
+RewriteRule ^(\w+)/over\.html$ /shuku.php?aid=$1&overtag=over
+RewriteRule ^(\w+)/over_([0-9]+)_([0-9]+)\.html$ /shuku.php?aid=$1&overtag=over&totalresult=$2&pageno=$3
+
+#伪静态小说下载列表
+RewriteRule ^txt\.html$ /txt.php
+RewriteRule ^txt_([0-9]+)_([0-9]+)\.html$ /txt.php?totalresult=$1&pageno=$2
+RewriteRule ^overtxt\.html$ /txt.php?overtag=overtxt
+RewriteRule ^overtxt_([0-9]+)_([0-9]+)\.html$ /txt.php?overtag=overtxt&totalresult=$1&pageno=$2
+RewriteRule ^(\w+)/txt\.html$ /txt.php?aid=$1
+RewriteRule ^(\w+)/txt_([0-9]+)_([0-9]+)\.html$ /txt.php?aid=$1&totalresult=$2&pageno=$3
+RewriteRule ^(\w+)/overtxt\.html$ /txt.php?aid=$1&overtag=overtxt
+RewriteRule ^(\w+)/overtxt_([0-9]+)_([0-9]+)\.html$ /txt.php?aid=$1&overtag=overtxt&totalresult=$2&pageno=$3
+
+#伪静态分类和作者
+RewriteCond $1 !^(sitemap)
+RewriteRule ^(\w+)\.html$ /plus/list.php?tid=$1
+
+#禁止非法plus目录访问，防止攻击
+RewriteCond $1 !^(search|list|view)
+RewriteRule ^plus\/(\w+)\.php(.*)$ /404.html
+
+#禁止直接访问模版
+RewriteRule ^templets/(.*)/(.*).htm$ /404.html
+RewriteRule ^data\/(.*)\.php(.*)$ /404.html
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault A600
+ExpiresByType image/x-icon A86400
+ExpiresByType application/x-javascript A86400
+ExpiresByType text/css A604800
+ExpiresByType image/gif A86400
+ExpiresByType image/png A86400
+ExpiresByType image/jpeg A86400
+ExpiresByType text/plain A86400
+ExpiresByType application/x-shockwave-flash A86400
+ExpiresByType video/x-flv A86400
+ExpiresByType application/pdf A86400
+ExpiresByType text/html A600
+</IfModule>
