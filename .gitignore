@@ -8,4 +8,3 @@ composer.lock
 .env
 /public/assets/addons/*
 /public/uploads/*
-/addons/*
