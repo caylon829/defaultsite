@@ -46,11 +46,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
               <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -115,6 +124,7 @@
         <option value="$PROJECT_DIR$/application/index/controller/cms/Archives.php" />
         <option value="$PROJECT_DIR$/application/index/view/cms/archives/post.html" />
         <option value="$PROJECT_DIR$/dayrui/Core/Views/header.html" />
+        <option value="$PROJECT_DIR$/dayrui/System/Config/Config.php" />
       </list>
     </option>
   </component>
@@ -155,8 +165,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="476" />
-    <option name="y" value="57" />
+    <option name="x" value="147" />
+    <option name="y" value="258" />
     <option name="width" value="1594" />
     <option name="height" value="801" />
   </component>
@@ -172,6 +182,29 @@
             <path>
               <item name="defaultsite" type="b2602c69:ProjectViewProjectNode" />
               <item name="defaultsite" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="defaultsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="defaultsite" type="462c0819:PsiDirectoryNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="defaultsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="defaultsite" type="462c0819:PsiDirectoryNode" />
+              <item name="dayrui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="defaultsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="defaultsite" type="462c0819:PsiDirectoryNode" />
+              <item name="dayrui" type="462c0819:PsiDirectoryNode" />
+              <item name="System" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="defaultsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="defaultsite" type="462c0819:PsiDirectoryNode" />
+              <item name="dayrui" type="462c0819:PsiDirectoryNode" />
+              <item name="System" type="462c0819:PsiDirectoryNode" />
+              <item name="Config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="defaultsite" type="b2602c69:ProjectViewProjectNode" />
@@ -216,6 +249,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UPUPW_AP5.6-1510\UPUPW_AP5.6\htdocs\defaultsite\static\assets" />
       <recent name="D:\UPUPW_AP5.6-1510\UPUPW_AP5.6\htdocs\defaultsite\application\admin\command\Install" />
     </key>
   </component>
@@ -243,7 +277,7 @@
       <updated>1564362076987</updated>
       <workItem from="1564362078173" duration="11394000" />
       <workItem from="1564377400920" duration="7883000" />
-      <workItem from="1564453335777" duration="2538000" />
+      <workItem from="1564453335777" duration="3898000" />
     </task>
     <task id="LOCAL-00001" summary="edit">
       <created>1564363404909</created>
@@ -364,15 +398,21 @@
       <option name="project" value="LOCAL" />
       <updated>1564453757774</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add">
+      <created>1564456140872</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1564456140872</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21815000" />
+    <option name="totallyTimeSpent" value="23175000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="476" y="57" width="1594" height="801" extended-state="0" />
-    <editor active="true" />
+    <frame x="147" y="258" width="1594" height="801" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25554106" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -401,18 +441,11 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add" />
     <MESSAGE value="edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit" />
+    <MESSAGE value="add" />
+    <option name="LAST_COMMIT_MESSAGE" value="add" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/admin/view/index/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1375">
-          <caret line="100" column="99" lean-forward="true" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/common/controller/Frontend.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -605,20 +638,6 @@
     <entry file="file://$PROJECT_DIR$/config/myfield/test.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dayrui/System/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1437">
-          <caret line="52" column="6" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dayrui/System/Config/Config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2408">
-          <caret line="45" column="6" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dayrui/App/Bbs/Config/App.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -661,10 +680,31 @@
     <entry file="file://$PROJECT_DIR$/static/assets/logo-web.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/dayrui/System/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2000">
+          <caret line="52" column="6" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dayrui/System/Config/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="55" column="74" lean-forward="true" selection-start-line="55" selection-start-column="74" selection-end-line="55" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
         </state>
       </provider>
     </entry>
