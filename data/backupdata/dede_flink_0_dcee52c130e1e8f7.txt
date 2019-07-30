@@ -1,2 +1,0 @@
-INSERT INTO `dede_flink` VALUES('32','2','/sitemap.html','网站地图','','','','1397059767','1','1');
-INSERT INTO `dede_flink` VALUES('41','1','http://www.010xr.com','新睿社区源码论坛','','','','1450775594','1','2');
