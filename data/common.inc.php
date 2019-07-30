@@ -1,9 +1,9 @@
 <?php
-//Êý¾Ý¿âÁ¬½ÓÐÅÏ¢
+//ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 $cfg_dbhost = 'localhost';
-$cfg_dbname = 'xiaoshuo';
-$cfg_dbuser = 'root';
-$cfg_dbpwd = '010xr.com';
+$cfg_dbname = 'adminsu';
+$cfg_dbuser = 'adminsu';
+$cfg_dbpwd = '123qwert';
 $cfg_dbprefix = 'dede_';
 $cfg_db_language = 'gbk';
 
