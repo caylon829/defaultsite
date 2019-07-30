@@ -278,7 +278,7 @@ if(!isset($cfg_NotPrintHead)) {
 }
 
 //自动加载类库处理
-function spl_autoload_register($classname)
+function _autoload($classname)
 {
     global $cfg_soft_lang;
     $classname = preg_replace("/[^0-9a-z_]/i", '', $classname);
