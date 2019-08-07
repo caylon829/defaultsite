@@ -125,4 +125,58 @@ class Bill extends Model
     {
         return $this->belongsTo('Contract', 'contract_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
+
+    /*protected static function init()
+    {
+        self::beforeUpdate(function ($row) {
+            //TODO 电池终端模块与电池模块
+            $changed = $row->getChangedData();
+            if (isset($changed['ems_concentrator_id'])) {
+
+                $m = new \app\admin\model\ems\Electricaldata();
+                $m->name('ems_electricaldata_' . $row->ems_company_id);
+                $m->where('ems_ammeter_code','=', $row->code)->update(['ems_region_id' =>$row->ems_region_id, 'ems_concentrator_id' =>$row->ems_concentrator_id]);
+
+                $m = new \app\admin\model\ems\Electricaldatalog();
+                $m->name('ems_electricaldatalog_' . $row->ems_company_id);
+                $m->where('ems_ammeter_code','=', $row->code)->update(['ems_region_id' =>$row->ems_region_id, 'ems_concentrator_id' =>$row->ems_concentrator_id]);
+
+                $m = new \app\admin\model\ems\Electricalperhour();
+                $m->name('ems_electricalperhour_' . $row->ems_company_id);
+                $m->where('ems_ammeter_code','=', $row->code)->update(['ems_region_id' =>$row->ems_region_id, 'ems_concentrator_id' =>$row->ems_concentrator_id]);
+
+                $m = new \app\admin\model\ems\Dailymaximum();
+                $m->name('ems_dailymaximum_' . $row->ems_company_id);
+                $m->where('ems_ammeter_code','=', $row->code)->update(['ems_region_id' =>$row->ems_region_id, 'ems_concentrator_id' =>$row->ems_concentrator_id]);
+
+                $m = new \app\admin\model\ems\Monthlymaximum();
+                $m->name('ems_monthlymaximum_' . $row->ems_company_id);
+                $m->where('ems_ammeter_code','=', $row->code)->update(['ems_region_id' =>$row->ems_region_id, 'ems_concentrator_id' =>$row->ems_concentrator_id]);
+            }
+        });
+
+        self::afterDelete(function ($row) {
+            //TODO 电池终端模块与电池模块
+            $m = new \app\admin\model\ems\Electricaldata();
+            $m->name('ems_electricaldata_' . $row->ems_company_id);
+            $m->where('ems_ammeter_code','=', $row->code)->delete();
+
+            $m = new \app\admin\model\ems\Electricaldatalog();
+            $m->name('ems_electricaldatalog_' . $row->ems_company_id);
+            $m->where('ems_ammeter_code','=', $row->code)->delete();
+
+            $m = new \app\admin\model\ems\Electricalperhour();
+            $m->name('ems_electricalperhour_' . $row->ems_company_id);
+            $m->where('ems_ammeter_code','=', $row->code)->delete();
+
+            $m = new \app\admin\model\ems\Dailymaximum();
+            $m->name('ems_dailymaximum_' . $row->ems_company_id);
+            $m->where('ems_ammeter_code','=', $row->code)->delete();
+
+            $m = new \app\admin\model\ems\Monthlymaximum();
+            $m->name('ems_monthlymaximum_' . $row->ems_company_id);
+            $m->where('ems_ammeter_code','=', $row->code)->delete();
+        });
+    }*/
+
 }
