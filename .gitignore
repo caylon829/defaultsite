@@ -1,10 +1,10 @@
-/nbproject/
 /runtime/*
-.idea/
+/public/uploads/*
+/application/database.php
+/application/config.php
+.idea
 composer.lock
 *.log
 *.css.map
 !.gitkeep
 .env
-/public/assets/addons/*
-/public/uploads/*

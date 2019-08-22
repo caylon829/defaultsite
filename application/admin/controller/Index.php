@@ -55,7 +55,7 @@ class Index extends Backend
      */
     public function login()
     {
-        $url = $this->request->get('url', 'bill?ref=addtabs');
+        $url = $this->request->get('url', 'index/index');
         if ($this->auth->isLogin()) {
             $this->success(__("You've logged in, do not login again"), $url);
         }
@@ -67,7 +67,7 @@ class Index extends Backend
             $rule = [
                 'username'  => 'require|length:3,30',
                 'password'  => 'require|length:3,30',
-                '__token__' => 'token',
+                '__token__' => 'require|token',
             ];
             $data = [
                 'username'  => $username,

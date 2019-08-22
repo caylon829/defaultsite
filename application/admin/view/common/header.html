@@ -28,7 +28,12 @@
                     <a href="__PUBLIC__" target="_blank"><i class="fa fa-home" style="font-size:14px;"></i></a>
                 </li>
 
-              
+                <!-- 账号信息下拉框 -->
+                <li class="hidden-xs">
+                    <a href="javascript:;" data-toggle="checkupdate" title="{:__('Check for updates')}">
+                        <i class="fa fa-refresh"></i>
+                    </a>
+                </li>
 
                 <!-- 清除缓存 -->
                 <li>
@@ -44,7 +49,7 @@
                     </ul>
                 </li>
 
-                <!-- 多语言列表
+                <!-- 多语言列表 -->
                 {if $Think.config.lang_switch_on}
                 <li class="hidden-xs">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language"></i></a>
@@ -57,7 +62,7 @@
                         </li>
                     </ul>
                 </li>
-                {/if}-->
+                {/if}
 
                 <!-- 全屏按钮 -->
                 <li class="hidden-xs">
@@ -80,7 +85,7 @@
                                 <small>{$admin.logintime|date="Y-m-d H:i:s",###}</small>
                             </p>
                         </li>
-
+                        <!-- Menu Body -->
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">

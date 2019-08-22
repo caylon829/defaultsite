@@ -13,7 +13,7 @@ use think\Exception;
 /**
  * 插件管理
  *
- * @icon fa fa-circle-o
+ * @icon   fa fa-cube
  * @remark 可在线安装、卸载、禁用、启用插件，同时支持添加本地插件。FastAdmin已上线插件商店 ，你可以发布你的免费或付费插件：<a href="https://www.fastadmin.net/store.html" target="_blank">https://www.fastadmin.net/store.html</a>
  */
 class Addon extends Backend
@@ -34,6 +34,7 @@ class Addon extends Backend
         foreach ($addons as $k => &$v) {
             $config = get_addon_config($v['name']);
             $v['config'] = $config ? 1 : 0;
+            $v['url'] = str_replace($this->request->server('SCRIPT_NAME'), '', $v['url']);
         }
         $this->assignconfig(['addons' => $addons]);
         return $this->view->fetch();
@@ -47,6 +48,9 @@ class Addon extends Backend
         $name = $this->request->get("name");
         if (!$name) {
             $this->error(__('Parameter %s can not be empty', $ids ? 'id' : 'name'));
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
+            $this->error(__('Addon name incorrect'));
         }
         if (!is_dir(ADDON_PATH . $name)) {
             $this->error(__('Directory not found'));
@@ -104,6 +108,9 @@ class Addon extends Backend
         if (!$name) {
             $this->error(__('Parameter %s can not be empty', 'name'));
         }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
+            $this->error(__('Addon name incorrect'));
+        }
         try {
             $uid = $this->request->post("uid");
             $token = $this->request->post("token");
@@ -137,6 +144,9 @@ class Addon extends Backend
         if (!$name) {
             $this->error(__('Parameter %s can not be empty', 'name'));
         }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
+            $this->error(__('Addon name incorrect'));
+        }
         try {
             Service::uninstall($name, $force);
             $this->success(__('Uninstall successful'));
@@ -157,6 +167,9 @@ class Addon extends Backend
         $force = (int)$this->request->post("force");
         if (!$name) {
             $this->error(__('Parameter %s can not be empty', 'name'));
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
+            $this->error(__('Addon name incorrect'));
         }
         try {
             $action = $action == 'enable' ? $action : 'disable';
@@ -190,6 +203,7 @@ class Addon extends Backend
             $tmpFile = $addonTmpDir . $info->getSaveName();
             try {
                 Service::unzip($tmpName);
+                unset($info);
                 @unlink($tmpFile);
                 $infoFile = $tmpAddonDir . 'info.ini';
                 if (!is_file($infoFile)) {
@@ -200,6 +214,9 @@ class Addon extends Backend
                 $name = isset($config['name']) ? $config['name'] : '';
                 if (!$name) {
                     throw new Exception(__('Addon info file data incorrect'));
+                }
+                if (!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
+                    throw new Exception(__('Addon name incorrect'));
                 }
 
                 $newAddonDir = ADDON_PATH . $name . DS;
@@ -234,6 +251,7 @@ class Addon extends Backend
                     throw new Exception(__($e->getMessage()));
                 }
             } catch (Exception $e) {
+                unset($info);
                 @unlink($tmpFile);
                 @rmdirs($tmpAddonDir);
                 $this->error(__($e->getMessage()));
@@ -252,6 +270,9 @@ class Addon extends Backend
         $name = $this->request->post("name");
         if (!$name) {
             $this->error(__('Parameter %s can not be empty', 'name'));
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
+            $this->error(__('Addon name incorrect'));
         }
         try {
             $uid = $this->request->post("uid");
@@ -320,6 +341,7 @@ class Addon extends Backend
                 $v['releaselist'] = [];
             }
             $v['url'] = addon_url($v['name']);
+            $v['url'] = str_replace($this->request->server('SCRIPT_NAME'), '', $v['url']);
             $v['createtime'] = filemtime(ADDON_PATH . $v['name']);
             if ($filter && isset($filter['category_id']) && is_numeric($filter['category_id']) && $filter['category_id'] != $v['category_id']) {
                 continue;

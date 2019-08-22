@@ -1,0 +1,70 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Timeslot')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-timeslot" data-rule="required" class="form-control" name="row[timeslot]" type="text" value="{$row.timeslot}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Domain')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-domain" data-rule="required" class="form-control" name="row[domain]" type="text" value="{$row.domain}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Subdomain')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-subdomain" data-rule="required" class="form-control" name="row[subdomain]" type="text" value="{$row.subdomain}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Ip')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-ip" data-rule="required" class="form-control" name="row[ip]" type="text" value="{$row.ip}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Icpstatus')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-icpstatus" data-rule="required" class="form-control" name="row[icpstatus]" type="number" value="{$row.icpstatus}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Service_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-service_code" data-rule="required" class="form-control" name="row[service_code]" type="text" value="{$row.service_code}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Lasttime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-lasttime" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[lasttime]" type="text" value="{$row.lasttime}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Lawtype')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-lawtype" data-rule="required" class="form-control" name="row[lawtype]" type="number" value="{$row.lawtype}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-status" data-rule="required" class="form-control" name="row[status]" type="number" value="{$row.status}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Note')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-note" class="form-control " rows="5" name="row[note]" cols="50">{$row.note}</textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

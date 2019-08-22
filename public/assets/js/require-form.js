@@ -1,7 +1,7 @@
 define(['jquery', 'bootstrap', 'upload', 'validator'], function ($, undefined, Upload, Validator) {
     var Form = {
         config: {
-            fieldlisttpl: '<dd class="form-inline"><input type="text" name="<%=name%>[<%=index%>][key]" class="form-control" value="<%=row.key%>" size="10" /> <input type="text" name="<%=name%>[<%=index%>][value]" class="form-control" value="<%=row.value%>" size="30" /> <span class="btn btn-sm btn-danger btn-remove"><i class="fa fa-times"></i></span> <span class="btn btn-sm btn-primary btn-dragsort"><i class="fa fa-arrows"></i></span></dd>'
+            fieldlisttpl: '<dd class="form-inline"><input type="text" name="<%=name%>[<%=index%>][key]" class="form-control" value="<%=row.key%>" size="10" /> <input type="text" name="<%=name%>[<%=index%>][value]" class="form-control" value="<%=row.value%>" /> <span class="btn btn-sm btn-danger btn-remove"><i class="fa fa-times"></i></span> <span class="btn btn-sm btn-primary btn-dragsort"><i class="fa fa-arrows"></i></span></dd>'
         },
         events: {
             validator: function (form, success, error, submit) {
@@ -20,7 +20,7 @@ define(['jquery', 'bootstrap', 'upload', 'validator'], function ($, undefined, U
                     },
                     dataFilter: function (data) {
                         if (data.code === 1) {
-                            return "";
+                            return data.msg ? { "ok": data.msg } : '';
                         } else {
                             return data.msg;
                         }
@@ -89,6 +89,11 @@ define(['jquery', 'bootstrap', 'upload', 'validator'], function ($, undefined, U
                 if ($(".selectpicker", form).size() > 0) {
                     require(['bootstrap-select', 'bootstrap-select-lang'], function () {
                         $('.selectpicker', form).selectpicker();
+                        $(form).on("reset", function () {
+                            setTimeout(function () {
+                                $('.selectpicker').selectpicker('refresh').trigger("change");
+                            }, 1);
+                        });
                     });
                 }
             },
@@ -133,6 +138,11 @@ define(['jquery', 'bootstrap', 'upload', 'validator'], function ($, undefined, U
                 //绑定城市远程插件
                 if ($("[data-toggle='city-picker']", form).size() > 0) {
                     require(['citypicker'], function () {
+                        $(form).on("reset", function () {
+                            setTimeout(function () {
+                                $("[data-toggle='city-picker']").citypicker('refresh');
+                            }, 1);
+                        });
                     });
                 }
             },
@@ -212,7 +222,7 @@ define(['jquery', 'bootstrap', 'upload', 'validator'], function ($, undefined, U
             faselect: function (form) {
                 //绑定fachoose选择附件事件
                 if ($(".fachoose", form).size() > 0) {
-                    $(".fachoose", form).off("click").on('click', function () {
+                    $(".fachoose", form).on('click', function () {
                         var that = this;
                         var multiple = $(this).data("multiple") ? $(this).data("multiple") : false;
                         var mimetype = $(this).data("mimetype") ? $(this).data("mimetype") : '';
@@ -242,9 +252,9 @@ define(['jquery', 'bootstrap', 'upload', 'validator'], function ($, undefined, U
                                             return false;
                                         }
                                     }
-                                    inputObj.val(result).trigger("change");
+                                    inputObj.val(result).trigger("change").trigger("validate");
                                 } else {
-                                    $("#" + input_id).val(data.url).trigger("change");
+                                    $("#" + input_id).val(data.url).trigger("change").trigger("validate");
                                 }
                             }
                         });
@@ -262,7 +272,7 @@ define(['jquery', 'bootstrap', 'upload', 'validator'], function ($, undefined, U
                             var textarea = $("textarea[name='" + name + "']", form);
                             var container = textarea.closest("dl");
                             var template = container.data("template");
-                            $.each($("input,select", container).serializeArray(), function (i, j) {
+                            $.each($("input,select,textarea", container).serializeArray(), function (i, j) {
                                 var reg = /\[(\w+)\]\[(\w+)\]$/g;
                                 var match = reg.exec(j.name);
                                 if (!match)

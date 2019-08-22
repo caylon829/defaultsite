@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'name' => '睿江云供应链管理系统',
+  'name' => '双备案工作核查系统',
   'beian' => '',
   'cdnurl' => '',
   'version' => '1.0.1',
@@ -12,7 +12,7 @@ return array (
     'backend' => 'zh-cn',
     'frontend' => 'zh-cn',
   ),
-  'fixedpage' => 'dashboard',
+  'fixedpage' => 'general/profile',
   'categorytype' => 
   array (
     'default' => 'Default',

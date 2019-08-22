@@ -51,14 +51,6 @@ class AdminLog extends Model
             }
             $title = implode(' ', $title);
         }
-        $behavior=substr($title, -6);
-        if($behavior=='添加'){
-            $behavior='add';
-        }elseif($behavior=='编辑'){
-            $behavior='edit';
-        }
-        $actionarr=explode('/', substr(request()->url(), 0, 50));
-        $content['action']=$actionarr[2];
         self::create([
             'title'     => $title,
             'content'   => !is_scalar($content) ? json_encode($content) : $content,
@@ -66,8 +58,7 @@ class AdminLog extends Model
             'admin_id'  => $admin_id,
             'username'  => $username,
             'useragent' => substr(request()->server('HTTP_USER_AGENT'), 0, 255),
-            'ip'        => request()->ip(),
-            'behavior'  => $behavior,
+            'ip'        => request()->ip()
         ]);
     }
 

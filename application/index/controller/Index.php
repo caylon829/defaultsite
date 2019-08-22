@@ -3,7 +3,6 @@
 namespace app\index\controller;
 
 use app\common\controller\Frontend;
-use app\common\library\Token;
 
 class Index extends Frontend
 {
@@ -14,12 +13,7 @@ class Index extends Frontend
 
     public function index()
     {
-        if ($this->auth->id) {
-            return $this->redirect('/index.php/index/user/index.html');
-        }else{
-            return $this->redirect('/index.php/index/user/login.html');
-        }
-        //return $this->view->fetch();
+        return $this->view->fetch();
     }
 
     public function news()

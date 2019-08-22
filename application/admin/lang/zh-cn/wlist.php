@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'Id'               => 'ID',
+    'Domain_id'        => '域名',
+    'Type'             => '分类',
+    'Type 1'           => '拉黑名单',
+    'Type 0'           => '过白域名',
+    'Wlist_creator'    => '提单人',
+    'Wlist_createtime' => '提单时间',
+    'Updatetime'       => '操作时间',
+    'Status'           => '工单状态',
+    'Status 0'         => '审核中',
+    'Status 1'         => '通过',
+    'Status 2'         => '不通过',
+    'Note'         => '备注',
+    'Lawtype'         => '存在非法',
+    'Yes'         => '是',
+    'No'         => '否',
+    'Domain_status'         => '公安备案人工状态',
+    'Domain_status 0'         => '已提交',
+    'Domain_status 1'         => '已备案',
+    'Domain_status 2'         => '拉黑',
+    'Check'=>'审核',
+    'Save'=>'保存',
+    'Log'=>'日志',
+];

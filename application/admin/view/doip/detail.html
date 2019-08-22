@@ -1,0 +1,35 @@
+<div class="panel panel-default panel-intro">
+
+    <div style="padding: 15px 15px 0px 15px;">
+        当前IP: <span class="text-info">{$_GET['ip']}</span>
+    </div>
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+                    <div id="toolbar" class="toolbar">
+                        <a href="javascript:;" class="btn btn-primary btn-refresh" title="{:__('Refresh')}" ><i class="fa fa-refresh"></i> </a>
+                        <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled {:$auth->check('doip/del')?'':'hide'}" title="{:__('Delete')}" ><i class="fa fa-trash"></i> {:__('Delete')}</a>
+
+                        <!--<div class="dropdown btn-group {:$auth->check('doip/multi')?'':'hide'}">
+                            <a class="btn btn-primary btn-more dropdown-toggle btn-disabled disabled" data-toggle="dropdown"><i class="fa fa-cog"></i> 设置{:__('Lawtype')}</a>
+                            <ul class="dropdown-menu text-left" role="menu">
+                                <li><a class="bttn-link btn-multi btn-disabled disabled" href="javascript:;" data-params="lawtype=1,status=1"><i class="fa fa-eye"></i> 设为涉黄</a></li>
+                                <li><a class="btn btn-link btn-multi btn-disabled disabled" href="javascript:;" data-params="lawtype=2,status=1"><i class="fa fa-eye-slash"></i> 设为涉赌</a></li>
+                                <li><a class="btn btn-link btn-multi btn-disabled disabled" href="javascript:;" data-params="lawtype=3,status=1"><i class="fa fa-eye-slash"></i> 设为涉毒</a></li>
+                                <li><a class="btn btn-link btn-multi btn-disabled disabled" href="javascript:;" data-params="lawtype=4,status=1"><i class="fa fa-eye-slash"></i> 设为ICP未备案跳转</a></li>
+                                <li><a class="btn btn-link btn-multi btn-disabled disabled" href="javascript:;" data-params="lawtype=5,status=1"><i class="fa fa-eye-slash"></i> 设为其他</a></li>
+                            </ul>
+                        </div>-->
+
+                        <a href="doip/editall/ip/{$_GET['ip']}" class="btn btn-danger btn-dialog" title="处理当前IP全部域名" ><i class="fa fa-plus"></i> 处理当前IP全部域名</a>
+                    </div>
+                    <table id="table" class="table table-striped table-bordered table-hover table-nowrap" width="100%">
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
